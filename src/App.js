@@ -22,13 +22,12 @@ function App() {
 
   return (
   <BrowserRouter>
+        <ProductContext.Provider value={{ products }}>
       <Routes>
-      <ProductContext.Provider value={{ products }}>
             <Route path="/" element={<Home products={products} />}/>
             <Route path="cart" element={<Cart />} />
-      </ProductContext.Provider>
-
       </Routes>
+      </ProductContext.Provider>
     </BrowserRouter>
   )
 }

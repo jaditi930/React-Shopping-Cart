@@ -1,11 +1,12 @@
 import React from 'react'
 import { useContext } from 'react';
 import Product from './Product'
-import { MyContext } from './MyContext';
+import { ProductContext } from '../Context';
+import './home.css'
 
 
 const Home = () => {
-    const {products} = useContext(MyContext);
+    const {products} = useContext(ProductContext);
 
     let all_products=products.map((product,index)=>{
         return (
@@ -13,7 +14,7 @@ const Home = () => {
         )
     })
   return (
-    <div>
+    <div className='container'>
       {all_products}
     </div>
   )
