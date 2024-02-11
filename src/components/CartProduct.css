@@ -1,0 +1,12 @@
+.handles{
+    display: flex;
+    justify-content: space-between;
+}
+
+.qty_btns{
+    padding: 5px;
+}
+
+.mg >*{
+    margin: 5px;
+}
