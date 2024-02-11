@@ -2,12 +2,16 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProductContext,CartContext } from './Context';
 
+import './App.css';
+import Navbar from './components/Navbar';
+
 import Home from './components/Home';
 import Cart from './components/Cart';
-import './App.css';
+
 
 function App() {
   const [products,setProducts]=useState([])
+  const [cart,setCart]=useState([])
 
   useEffect(()=>{
 
@@ -23,11 +27,14 @@ function App() {
   return (
   <BrowserRouter>
         <ProductContext.Provider value={{ products }}>
-      <Routes>
-            <Route path="/" element={<Home products={products} />}/>
-            <Route path="cart" element={<Cart />} />
-      </Routes>
-      </ProductContext.Provider>
+          <CartContext.Provider value={{cart,setCart}}>
+              <Navbar/>
+                  <Routes>
+                        <Route path="/" element={<Home products={products} />}/>
+                        <Route path="cart" element={<Cart />} />
+                  </Routes>
+          </CartContext.Provider>
+        </ProductContext.Provider>
     </BrowserRouter>
   )
 }

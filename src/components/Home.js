@@ -10,7 +10,7 @@ const Home = () => {
 
     let all_products=products.map((product,index)=>{
         return (
-        <Product product={product}/>
+        <Product product={product} key={product.id}/>
         )
     })
   return (
