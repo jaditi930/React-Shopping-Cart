@@ -4,7 +4,10 @@
 }
 
 .qty_btns{
-    padding: 5px;
+    padding: 7px;
+    background-color: wheat;
+    border: none;
+    cursor: pointer;
 }
 
 .mg >*{

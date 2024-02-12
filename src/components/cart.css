@@ -9,6 +9,16 @@
     top: 0;
     background-color: white;
 }
+.subtotal{
+    display: flex;
+    padding: 10px;
+}
+#checkout{
+    color: white;
+    background-color: black;
+    margin-left: auto;
+    padding: 5px;
+}
 .cross{
     font-weight: bold;
     padding: 10px;
@@ -17,4 +27,14 @@
 
 h1{
     text-align: center;
+}
+.cart_products{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (max-width:600px){
+    #cart{
+        width: 100%;
+    }
 }

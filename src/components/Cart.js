@@ -18,7 +18,7 @@ const Cart = (props) => {
 
     return (
       <>
-      <CartProduct product={product}/>
+      <CartProduct product={product} key={product.id}/>
       </>
     )
   })
@@ -32,13 +32,24 @@ const Cart = (props) => {
         }}>X</div>
     <h1>Cart</h1>
 
-    <div>                           
-      {products_in_cart}
-    </div>
+    { products_in_cart.length>0 ?   (
+    <>
+        <div className='cart_products'>                           
+        {products_in_cart}
+        </div>
 
-    <div id="grand_total">{grand_total}</div>
+        <div className='subtotal'>
+          <span id="grand_total">Subtotal: {Math.ceil(grand_total)}</span>
+          <button id="checkout">Checkout</button>
+        </div>
+    </>
+    ): (
+      <>
+      <div>You have no items in the cart.</div>
+      </>
+    )
+    }
     </div>
-
   )
 }
 

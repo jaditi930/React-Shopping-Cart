@@ -7,8 +7,8 @@ import './CartProduct.css'
 const CartProduct = ({product}) => {
 
     function text_truncate(str, length, ending) {
-        console.log(str)
-        if (length == null) {
+
+      if (length == null) {
           length = 100;
         }
         if (ending == null) {
@@ -66,7 +66,7 @@ const CartProduct = ({product}) => {
         <div className='handles'>
 
             <div className='price'>   
-                <span>${product.price}</span>   
+                <span className='price_span'>${product.price}</span>   
             </div>
 
             <div className='mg'>
