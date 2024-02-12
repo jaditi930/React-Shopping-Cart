@@ -1,13 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './navbar.css'
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div className='nav'>
       <ul className='flex'>
-        <li id='name'><Link to='/'>E-Store</Link></li>
-        <li className='ml-auto'><button id='cart_btn'><Link to='/cart'>My Cart</Link></button></li>
+        <li id='name'>E-Store</li>
+        <li className='ml-auto'><button id='cart_btn' onClick={()=>{
+          props.setDisplayCart("block")
+        }}>
+          My Cart</button></li>
       </ul>
     </div>
   )

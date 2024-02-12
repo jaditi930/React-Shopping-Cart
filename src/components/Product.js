@@ -48,7 +48,7 @@ const Product = ({product}) => {
       <img src={product.image} alt="" />
       <div className='bold'>{product.title}</div>
       <div>{text_truncate(product.description)}</div>
-      <div className='price'>   <span>${product.price}</span>   </div>
+      <div className='price'>   <span className='price_span'>${product.price}</span>   </div>
       <button className='bold add_cart' onClick={add_to_cart}>Add To Cart</button>
     </div>
   )

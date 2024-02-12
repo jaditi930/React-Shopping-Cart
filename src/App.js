@@ -12,6 +12,7 @@ import Cart from './components/Cart';
 function App() {
   const [products,setProducts]=useState([])
   const [cart,setCart]=useState([])
+  const [displayCart,setDisplayCart]=useState("none")
 
   useEffect(()=>{
 
@@ -25,18 +26,26 @@ function App() {
   },[])
 
   return (
-  <BrowserRouter>
         <ProductContext.Provider value={{ products }}>
           <CartContext.Provider value={{cart,setCart}}>
-              <Navbar/>
-                  <Routes>
-                        <Route path="/" element={<Home products={products} />}/>
+
+              <Navbar setDisplayCart={setDisplayCart}/>
+              <div className='main'>
+              <Home/>
+              <Cart displayCart={displayCart} setDisplayCart={setDisplayCart}/>
+              </div>
+
+              {/* <Navbar/> */}
+
+                  {/* <Routes>
+                        <Route path="/" element={<Home/>}/>
                         <Route path="cart" element={<Cart />} />
-                  </Routes>
+                  </Routes> */}
+
           </CartContext.Provider>
         </ProductContext.Provider>
-    </BrowserRouter>
   )
+  
 }
 
 export default App;

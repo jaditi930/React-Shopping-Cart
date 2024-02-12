@@ -2,9 +2,12 @@ import React from 'react'
 import { CartContext } from '../Context';
 import CartProduct from './CartProduct';
 import { useContext } from 'react';
+import './cart.css'
 
 
-const Cart = () => {
+const Cart = (props) => {
+
+  console.log(props.displayCart)
 
   const {cart,setCart} = useContext(CartContext);
   let grand_total=0;
@@ -22,13 +25,19 @@ const Cart = () => {
 
   return (
 
-    <>
-    <div className='container'>                           
+    <div id="cart" style={{display:props.displayCart}}>
+    
+    <div className='cross' onClick={()=>{
+          props.setDisplayCart("none")
+        }}>X</div>
+    <h1>Cart</h1>
+
+    <div>                           
       {products_in_cart}
     </div>
 
     <div id="grand_total">{grand_total}</div>
-    </>
+    </div>
 
   )
 }
